@@ -1,7 +1,3 @@
-<div align="center">
-
-# Carl MONNAERT
-
 Welcome to my website.
 
 As an engineering student at Télécom Paris specializing in Applied Mathematics, my academic journey is focused on the intersection of Stochastic Modeling, Numerical Analysis, and Machine Learning. I am deeply driven by rigorous statistical inference and computationally efficient problem-solving. My ultimate ambition is to leverage these mathematical frameworks and my programming expertise to build robust algorithmic strategies as a **Quantitative Trader**.
@@ -9,10 +5,7 @@ As an engineering student at Télécom Paris specializing in Applied Mathematics
 Here you'll find an overview of my academic background, my work experiences, my projects and my contact infos.
 
 <br>
-<b><a href="https://carlmonnaert.github.io/resume.pdf" target="_blank">View my Resume (PDF)</a></b>
-
-</div>
-</div>
+<b><a href="https://carlmonnaert.github.io/Profile.pdf" target="_blank">View my Resume (PDF)</a></b>
 
 ---
 
@@ -72,13 +65,9 @@ Here you'll find an overview of my academic background, my work experiences, my 
 
 ---
 
-<div align="center">
-
 ## Contact
 
 Feel free to reach out to discuss potential opportunities or collaborations!
 
 **Email:** [monnaert.carl@gmail.com](mailto:monnaert.carl@gmail.com) | **Phone:** +33 7 68 30 74 34  
 **LinkedIn:** [Carl Monnaert](https://www.linkedin.com/in/carl-monnaert-12118a31a) | **GitHub:** [carlmonnaert](https://github.com/carlmonnaert/)
-
-</div>
