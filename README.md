@@ -1,71 +1,80 @@
-# carlmonnaert.github.io
+<div align="center">
 
-Welcome to my GitHub Pages repository! Here you'll find an overview of my public projects, spanning machine learning, scientific computing, compilers, and web development.
+# Carl MONNAERT
 
----
+Welcome to my website.
 
-## 🚀 Public Projects
+As an engineering student at Télécom Paris specializing in Applied Mathematics, my academic journey is focused on the intersection of Stochastic Modeling, Numerical Analysis, and Machine Learning. I am deeply driven by rigorous statistical inference and computationally efficient problem-solving. My ultimate ambition is to leverage these mathematical frameworks and my programming expertise to build robust algorithmic strategies as a **Quantitative Trader**.
 
-### 🔬 [QRT-Challenge-Data-2025](https://github.com/carlmonnaert/QRT-Challenge-Data-2025)
-**Overall Survival Prediction for patients diagnosed with Myeloid Leukemia**
+Here you'll find an overview of my academic background, my work experiences, my projects and my contact infos.
 
-A data science project focused on survival analysis for leukemia patients, developed as part of the QRT Data Challenge 2025.
-
-- **Language:** Jupyter Notebook
-- **Topics:** `data-science` `forecasting` `machine-learning` `medical`
+</div>
 
 ---
 
-### ⚙️ [Compiler](https://github.com/carlmonnaert/Compiler)
-**Interpreting/Compiling in RISC-V tools for a set of simplified programming languages such as Python and C**
+## Education
 
-A compiler and interpreter project targeting the RISC-V architecture, supporting simplified subsets of Python and C.
+<img align="right" src="https://www.telecom-paris.fr/wp-content-EvDsK19/uploads/2024/01/logo_telecom_ipparis_rvb_fond_h-770x360.png" height="50" alt="Télécom Paris Logo">
 
-- **Language:** OCaml
-- **Topics:** `c` `python` `risc-v`
+### Télécom Paris
+*Engineer's degree, Applied mathematics (August 2024 - June 2027)*
+<br clear="all" />
 
----
+<img align="right" src="https://lycee-roosevelt-reims.fr/wp-content/uploads/2025/01/cropped-logo_roosevelt-17-1024x606.png" height="50" alt="Lycée Franklin Roosevelt Logo">
 
-### 🌐 [Typescript-Display](https://github.com/carlmonnaert/Typescript-Display)
-**A display of my TypeScript skills, featuring a demonstration website for work sessions as well as a website for getting real-time data on the crypto-market.**
-
-A showcase of TypeScript and web development skills with live-data integrations.
-
-- **Language:** Astro
-- **Topics:** `typescript` `web-development`
+### Lycée Franklin Roosevelt
+*Classes préparatoires aux grandes écoles (CPGE) MPI, Mathematics, Physics, Computer Science (September 2022 - July 2024)*
+<br clear="all" />
 
 ---
 
-### 🔥 [Heat-equation](https://github.com/carlmonnaert/Heat-equation)
-**A numerical approach to optimization in 1D, 2D and 3D with visualization tools.**
+## Work Experience
 
-Numerical solver for the heat equation across one, two, and three dimensions, including interactive visualizations.
+<img align="right" src="https://choten-academie.fr/assets/img/logo_dark.webp" height="50" alt="Chôten Academie Logo">
 
-- **Language:** Python
-- **Topics:** `heat-equation` `optimization` `simulation`
+### Computer Science Tutor | Chôten Academie
+*March 2026 - Present*
+* Designed and delivered intensive holiday courses in advanced Computer Science for students in the highly competitive French preparatory classes (CPGE - rigorous 2-year undergraduate programs).
+* Instructed students in complex theoretical concepts, including algorithmic design, data structures, computational complexity, and programming (C, OCaml), directly preparing them for elite engineering school entrance exams.
+<br clear="all" />
 
----
+<img align="right" src="https://fr.masteur.com/lovable-uploads/e595c5ae-6bf7-483d-b664-45109ed34db3.png" height="50" alt="Masteur Logo">
 
-### 🏥 [Medical-AI](https://github.com/carlmonnaert/Medical-AI)
-**A comprehensive hospital simulation system integrating discrete event simulation, real-time monitoring, machine learning predictions and interactive dashboards.**
+### Mathematics Tutor | Masteur
+*December 2024 - Present | France*
+* Designed exercises and lectures to reinforce key concepts in mathematics.
+* Identified and corrected students misunderstandings, emphasizing on clear communication.
+<br clear="all" />
 
-A full-stack simulation platform for hospital resource management, combining ML forecasting, real-time monitoring, and rich dashboards.
+<img align="right" src="https://gmjphoenix.com/wp-content/uploads/2023/11/LOGO-GMJ-CARRE-4.png" height="50" alt="GMJ Phoenix Logo">
 
-- **Language:** Python
-- **Topics:** `crisis-management` `forecasting-models` `machine-learning`
-
----
-
-### 🌿 [Carbon-Project](https://github.com/carlmonnaert/Carbon-Project)
-**Ordinary differential equations (ODE) solving using finite difference method in the case of a simplified model of Carbon cycle**
-
-Numerical simulation of the global carbon cycle using finite-difference ODE solvers.
-
-- **Language:** Python
-- **Topics:** `numerical-methods` `ode`
+### Production Line Intern | GMJ Phoenix
+*June 2025 - June 2025*
+* Ran a printing machine and helped maintaining it.
+<br clear="all" />
 
 ---
 
-## 📬 Contact
+## Public Projects
 
-Feel free to explore the projects above and reach out via [GitHub](https://github.com/carlmonnaert)!
+| Project | Description |
+| :--- | :--- |
+| **[QRT-Challenge-Data-2025](https://github.com/carlmonnaert/QRT-Challenge-Data-2025)** | A data science project focused on survival analysis for leukemia patients, developed as part of the QRT Data Challenge 2025. |
+| **[Carbon-Project](https://github.com/carlmonnaert/Carbon-Project)** | Numerical simulation of the global carbon cycle using finite-difference ODE solvers. |
+| **[Compiler](https://github.com/carlmonnaert/Compiler)** | A compiler and interpreter project targeting the RISC-V architecture, supporting simplified subsets of Python and C. |
+| **[Typescript-Display](https://github.com/carlmonnaert/Typescript-Display)** | A showcase of TypeScript and web development skills with live-data integrations. |
+| **[Heat-equation](https://github.com/carlmonnaert/Heat-equation)** | Numerical solver for the heat equation across one, two, and three dimensions, including interactive visualizations. |
+| **[Medical-AI](https://github.com/carlmonnaert/Medical-AI)** | A full-stack simulation platform for hospital resource management, combining ML forecasting, real-time monitoring, and rich dashboards. |
+
+---
+
+<div align="center">
+
+## Contact
+
+Feel free to reach out to discuss potential opportunities or collaborations!
+
+**Email:** [monnaert.carl@gmail.com](mailto:monnaert.carl@gmail.com) | **Phone:** +33 7 68 30 74 34  
+**LinkedIn:** [Carl Monnaert](https://www.linkedin.com/in/carl-monnaert-12118a31a) | **GitHub:** [carlmonnaert](https://github.com/carlmonnaert/)
+
+</div>
