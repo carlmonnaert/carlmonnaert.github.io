@@ -1,11 +1,15 @@
-Welcome to my website.
+<div align="center">
 
-As an engineering student at Télécom Paris specializing in Applied Mathematics, my academic journey is focused on the intersection of Stochastic Modeling, Numerical Analysis, and Machine Learning. I am deeply driven by rigorous statistical inference and computationally efficient problem-solving. My ultimate ambition is to leverage these mathematical frameworks and my programming expertise to build robust algorithmic strategies as a **Quantitative Trader**.
+<h3>Welcome to my website.</h3>
 
-Here you'll find an overview of my academic background, my work experiences, my projects and my contact infos.
+<p>As an engineering student at Télécom Paris specializing in Applied Mathematics, my academic journey is focused on the intersection of Stochastic Modeling, Numerical Analysis, and Machine Learning. I am deeply driven by rigorous statistical inference and computationally efficient problem-solving. My ultimate ambition is to leverage these mathematical frameworks and my programming expertise to build robust algorithmic strategies as a <b>Quantitative Trader</b>.</p>
+
+<p>Here you'll find an overview of my academic background, my work experiences, my projects and my contact infos.</p>
 
 <br>
-<b><a href="https://carlmonnaert.github.io/resume.pdf" target="_blank">View my Resume (PDF)</a></b>
+<a href="https://carlmonnaert.github.io/resume.pdf" target="_blank"><b>View my Resume (PDF)</b></a>
+
+</div>
 
 ---
 
@@ -65,8 +69,17 @@ Here you'll find an overview of my academic background, my work experiences, my 
 
 ---
 
-## Contact
+<div align="center">
 
-Feel free to reach out to discuss potential opportunities or collaborations!
+<h2>Contact</h2>
 
-**Email:** [monnaert.carl@gmail.com](mailto:monnaert.carl@gmail.com) | **Phone:** +33 7 68 30 74 34  | **LinkedIn:** [Carl Monnaert](https://www.linkedin.com/in/carl-monnaert-12118a31a) | **GitHub:** [carlmonnaert](https://github.com/carlmonnaert/)
+<p>Feel free to reach out to discuss potential opportunities or collaborations!</p>
+
+<p>
+<b>Email:</b> <a href="mailto:monnaert.carl@gmail.com">monnaert.carl@gmail.com</a> | 
+<b>Phone:</b> +33 7 68 30 74 34 <br>
+<b>LinkedIn:</b> <a href="https://www.linkedin.com/in/carl-monnaert-12118a31a" target="_blank">Carl Monnaert</a> | 
+<b>GitHub:</b> <a href="https://github.com/carlmonnaert/" target="_blank">carlmonnaert</a>
+</p>
+
+</div>
