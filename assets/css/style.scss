@@ -9,6 +9,10 @@
   max-width: 900px;
 }
 
+h1 {
+  text-align: center;
+}
+
 /* 2. Professional link colors (Navy Blue) */
 a {
   color: #004080;
@@ -45,7 +49,4 @@ tr:hover {
 img[align="right"] {
   margin-left: 20px;
   margin-bottom: 15px;
-}
-.page-header {
-  text-align: center;
 }
