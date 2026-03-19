@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carl Monnaert | Quantitative Trader</title>
+    <style>
+        /* Base Variables & Typography */
+        :root {
+            --text-main: #24292e;
+            --text-muted: #586069;
+            --link-color: #0366d6;
+            --border-color: #eaecef;
+            --bg-color: #ffffff;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 50px 20px;
+        }
+        .container {
+            max-width: 760px; /* Optimal width for reading */
+            margin: 0 auto;
+        }
+        
+        /* Header Section */
+        header {
+            margin-bottom: 40px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin: 0 0 10px 0;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+        .contact-links {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .contact-links a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+        .contact-links a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Section Titles */
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 40px;
+            margin-bottom: 25px;
+            font-weight: 600;
+            color: #111;
+        }
+        
+        /* About Text */
+        .about-text {
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+        .resume-btn {
+            display: inline-block;
+            margin-top: 5px;
+            padding: 6px 14px;
+            background-color: #fafbfc;
+            border: 1px solid rgba(27,31,35,0.15);
+            border-radius: 6px;
+            color: #24292e;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: background-color 0.2s;
+        }
+        .resume-btn:hover {
+            background-color: #f3f4f6;
+            text-decoration: none;
+        }
+
+        /* Flex Layout for Education & Experience */
+        .list-item {
+            display: flex;
+            margin-bottom: 35px;
+            align-items: flex-start;
+        }
+        .item-logo {
+            flex-shrink: 0;
+            width: 55px;
+            height: 55px;
+            margin-right: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .item-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        .item-content {
+            flex-grow: 1;
+        }
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+        }
+        .item-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin: 0;
+            color: #222;
+        }
+        .item-date {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            white-space: nowrap;
+            margin-left: 15px;
+        }
+        .item-subtitle {
+            font-style: italic;
+            color: var(--text-muted);
+            margin: 0 0 8px 0;
+            font-size: 0.95rem;
+        }
+        ul {
+            margin: 0;
+            padding-left: 20px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        li {
+            margin-bottom: 6px;
+        }
+
+        /* Projects Layout */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+        .project-card {
+            padding: 18px 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .project-card:hover {
+            border-color: #ccc;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        }
+        .project-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin: 0 0 6px 0;
+        }
+        .project-title a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+        .project-title a:hover {
+            text-decoration: underline;
+        }
+        .project-desc {
+            margin: 0;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>Carl Monnaert</h1>
+        <div class="contact-links">
+            <span><a href="mailto:monnaert.carl@gmail.com">[cite: 3] monnaert.carl@gmail.com</a></span>
+            <span>[cite: 3] +33 7 68 30 74 34</span>
+            <span><a href="https://www.linkedin.com/in/carl-monnaert-12118a31a" target="_blank">[cite: 4, 5] LinkedIn</a></span>
+            <span><a href="https://github.com/carlmonnaert/" target="_blank">[cite: 5] GitHub</a></span>
+        </div>
+    </header>
+
+    <section>
+        <p class="about-text">
+            Welcome to my website.
+        </p>
+        <p class="about-text">
+            As an engineering student at Télécom Paris specializing in Applied Mathematics, my academic journey is focused on the intersection of Stochastic Modeling, Numerical Analysis, and Machine Learning. [cite: 18, 19] I am deeply driven by rigorous statistical inference and computationally efficient problem-solving. [cite: 21] My ultimate ambition is to leverage these mathematical frameworks and my programming expertise to build robust algorithmic strategies as a <b>Quantitative Trader</b>.
+        </p>
+        <p class="about-text">
+            Here you'll find an overview of my academic background, my work experiences, and my projects.
+        </p>
+        <a href="https://carlmonnaert.github.io/Profile.pdf" target="_blank" class="resume-btn">View my Resume (PDF)</a>
+    </section>
+
+    <section>
+        <h2>Education</h2>
+        
+        <div class="list-item">
+            <div class="item-logo">
+                <img src="https://www.telecom-paris.fr/wp-content-EvDsK19/uploads/2024/01/logo_telecom_ipparis_rvb_fond_h-770x360.png" alt="Télécom Paris">
+            </div>
+            <div class="item-content">
+                <div class="item-header">
+                    <h3 class="item-title">Télécom Paris [cite: 40]</h3>
+                    <span class="item-date">August 2024 - June 2027 [cite: 41]</span>
+                </div>
+                <p class="item-subtitle">Engineer's degree, Applied mathematics [cite: 41]</p>
+            </div>
+        </div>
+
+        <div class="list-item">
+            <div class="item-logo">
+                <img src="https://lycee-roosevelt-reims.fr/wp-content/uploads/2025/01/cropped-logo_roosevelt-17-1024x606.png" alt="Lycée Franklin Roosevelt">
+            </div>
+            <div class="item-content">
+                <div class="item-header">
+                    <h3 class="item-title">Lycée Franklin Roosevelt [cite: 42]</h3>
+                    <span class="item-date">September 2022 - July 2024 [cite: 43]</span>
+                </div>
+                <p class="item-subtitle">Classes préparatoires aux grandes écoles (CPGE) MPI, Mathematics, Physics, Computer Science [cite: 43]</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Work Experience</h2>
+
+        <div class="list-item">
+            <div class="item-logo">
+                <img src="https://choten-academie.fr/assets/img/logo_dark.webp" alt="Chôten Academie">
+            </div>
+            <div class="item-content">
+                <div class="item-header">
+                    <h3 class="item-title">Computer Science Tutor | Chôten Academie [cite: 23, 24]</h3>
+                    <span class="item-date">March 2026 - Present [cite: 25]</span>
+                </div>
+                <ul>
+                    <li>Designed and delivered intensive holiday courses in advanced Computer Science for students in the highly competitive French preparatory classes (CPGE - rigorous 2-year undergraduate programs). [cite: 26]</li>
+                    <li>Instructed students in complex theoretical concepts, including algorithmic design, data structures, computational complexity, and programming (C, OCaml), directly preparing them for elite engineering school entrance exams. [cite: 27]</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="list-item">
+            <div class="item-logo">
+                <img src="https://fr.masteur.com/lovable-uploads/e595c5ae-6bf7-483d-b664-45109ed34db3.png" alt="Masteur">
+            </div>
+            <div class="item-content">
+                <div class="item-header">
+                    <h3 class="item-title">Mathematics Tutor | Masteur [cite: 28, 29]</h3>
+                    <span class="item-date">December 2024 - Present [cite: 30]</span>
+                </div>
+                <ul>
+                    <li>Designed exercises and lectures to reinforce key concepts in mathematics. [cite: 32]</li>
+                    <li>Identified and corrected students misunderstandings, emphasizing on clear communication. [cite: 34]</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="list-item">
+            <div class="item-logo">
+                <img src="https://gmjphoenix.com/wp-content/uploads/2023/11/LOGO-GMJ-CARRE-4.png" alt="GMJ Phoenix">
+            </div>
+            <div class="item-content">
+                <div class="item-header">
+                    <h3 class="item-title">Production Line Intern | GMJ Phoenix [cite: 35, 36]</h3>
+                    <span class="item-date">June 2025 - June 2025 [cite: 37]</span>
+                </div>
+                <ul>
+                    <li>Ran a printing machine and helped maintaining it. [cite: 38]</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Public Projects</h2>
+        <div class="projects-grid">
+            
+            <div class="project-card">
+                <h3 class="project-title"><a href="https://github.com/carlmonnaert/QRT-Challenge-Data-2025" target="_blank">QRT-Challenge-Data-2025</a></h3>
+                <p class="project-desc">A data science project focused on survival analysis for leukemia patients, developed as part of the QRT Data Challenge 2025.</p>
+            </div>
+
+            <div class="project-card">
+                <h3 class="project-title"><a href="https://github.com/carlmonnaert/Carbon-Project" target="_blank">Carbon-Project</a></h3>
+                <p class="project-desc">Numerical simulation of the global carbon cycle using finite-difference ODE solvers.</p>
+            </div>
+
+            <div class="project-card">
+                <h3 class="project-title"><a href="https://github.com/carlmonnaert/Compiler" target="_blank">Compiler</a></h3>
+                <p class="project-desc">A compiler and interpreter project targeting the RISC-V architecture, supporting simplified subsets of Python and C.</p>
+            </div>
+
+            <div class="project-card">
+                <h3 class="project-title"><a href="https://github.com/carlmonnaert/Typescript-Display" target="_blank">Typescript-Display</a></h3>
+                <p class="project-desc">A showcase of TypeScript and web development skills with live-data integrations.</p>
+            </div>
+
+            <div class="project-card">
+                <h3 class="project-title"><a href="https://github.com/carlmonnaert/Heat-equation" target="_blank">Heat-equation</a></h3>
+                <p class="project-desc">Numerical solver for the heat equation across one, two, and three dimensions, including interactive visualizations.</p>
+            </div>
+
+            <div class="project-card">
+                <h3 class="project-title"><a href="https://github.com/carlmonnaert/Medical-AI" target="_blank">Medical-AI</a></h3>
+                <p class="project-desc">A full-stack simulation platform for hospital resource management, combining ML forecasting, real-time monitoring, and rich dashboards.</p>
+            </div>
+
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>
