@@ -7,13 +7,15 @@
     <style>
         /* Quant Theme Variables & Typography */
         :root {
-            --text-main: #111827;
-            --text-muted: #4b5563;
-            --link-color: #2563eb;
-            --link-hover: #1e40af;
-            --border-color: #d1d5db;
-            --bg-color: #fcfcfc;
-            --card-bg: #ffffff;
+            /* Institutional Color Palette */
+            --text-main: #0f172a; /* Deep slate, sophisticated alternative to pure black */
+            --text-muted: #475569; /* Slate gray for secondary text */
+            --link-color: #0284c7; /* Sharp financial blue */
+            --link-hover: #0369a1; /* Deeper blue for hover states */
+            --border-color: #cbd5e1; /* Crisp, cool-toned border */
+            --bg-color: #f8fafc; /* Very subtle cool gray background */
+            --card-bg: #ffffff; /* Pure white to make cards pop */
+            
             --mono-font: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
             --sans-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
@@ -44,7 +46,7 @@
             margin: 0 0 15px 0;
             font-weight: 700;
             letter-spacing: -0.5px;
-            color: #000;
+            color: var(--text-main);
         }
         .contact-links {
             font-family: var(--mono-font);
@@ -100,7 +102,7 @@
             transition: background-color 0.2s, transform 0.1s;
         }
         .resume-btn:hover {
-            background-color: #000000;
+            background-color: var(--link-hover);
             transform: translateY(-1px);
         }
 
@@ -181,14 +183,14 @@
             background: var(--card-bg);
             padding: 22px;
             border: 1px solid var(--border-color);
-            border-radius: 2px;
+            border-radius: 4px;
             transition: all 0.2s ease;
             display: flex;
             flex-direction: column;
         }
         .project-card:hover {
-            border-color: var(--text-main);
-            box-shadow: 4px 4px 0px rgba(17, 24, 39, 0.05);
+            border-color: var(--link-color);
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
             transform: translateY(-2px);
         }
         .project-title {
@@ -218,11 +220,11 @@
         .tag {
             font-family: var(--mono-font);
             font-size: 0.7rem;
-            background: #f3f4f6;
+            background: #f1f5f9;
             color: var(--text-muted);
             padding: 3px 8px;
             border-radius: 2px;
-            border: 1px solid #e5e7eb;
+            border: 1px solid var(--border-color);
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
