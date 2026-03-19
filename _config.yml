@@ -1,5 +1,3 @@
 title: Carl Monnaert
 description: Applied Mathematics student at Télécom Paris | Aspiring Quantitative Trader
-theme: jekyll-theme-minimal
-
-# Optional: You can add Google Analytics or other built-in Jekyll features here later
+theme: jekyll-theme-primer
