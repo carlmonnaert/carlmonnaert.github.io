@@ -5,7 +5,7 @@ As an engineering student at Télécom Paris specializing in Applied Mathematics
 Here you'll find an overview of my academic background, my work experiences, my projects and my contact infos.
 
 <br>
-<b><a href="https://carlmonnaert.github.io/Profile.pdf" target="_blank">View my Resume (PDF)</a></b>
+<b><a href="https://carlmonnaert.github.io/resume.pdf" target="_blank">View my Resume (PDF)</a></b>
 
 ---
 
