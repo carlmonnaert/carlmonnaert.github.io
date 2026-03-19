@@ -69,5 +69,4 @@ Here you'll find an overview of my academic background, my work experiences, my 
 
 Feel free to reach out to discuss potential opportunities or collaborations!
 
-**Email:** [monnaert.carl@gmail.com](mailto:monnaert.carl@gmail.com) | **Phone:** +33 7 68 30 74 34  
-**LinkedIn:** [Carl Monnaert](https://www.linkedin.com/in/carl-monnaert-12118a31a) | **GitHub:** [carlmonnaert](https://github.com/carlmonnaert/)
+**Email:** [monnaert.carl@gmail.com](mailto:monnaert.carl@gmail.com) | **Phone:** +33 7 68 30 74 34  | **LinkedIn:** [Carl Monnaert](https://www.linkedin.com/in/carl-monnaert-12118a31a) | **GitHub:** [carlmonnaert](https://github.com/carlmonnaert/)
