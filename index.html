@@ -5,61 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carl Monnaert | Quantitative Trader</title>
     <style>
-        /* Base Variables & Typography */
+        /* Quant Theme Variables & Typography */
         :root {
-            --text-main: #24292e;
-            --text-muted: #586069;
-            --link-color: #0366d6;
-            --border-color: #eaecef;
-            --bg-color: #ffffff;
+            --text-main: #111827;
+            --text-muted: #4b5563;
+            --link-color: #2563eb;
+            --link-hover: #1e40af;
+            --border-color: #d1d5db;
+            --bg-color: #fcfcfc;
+            --card-bg: #ffffff;
+            --mono-font: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+            --sans-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            font-family: var(--sans-font);
             color: var(--text-main);
             background-color: var(--bg-color);
             line-height: 1.6;
             margin: 0;
-            padding: 50px 20px;
+            padding: 60px 20px;
+            -webkit-font-smoothing: antialiased;
         }
+        
         .container {
-            max-width: 760px; /* Optimal width for reading */
+            max-width: 800px;
             margin: 0 auto;
         }
         
         /* Header Section */
         header {
-            margin-bottom: 40px;
-            padding-bottom: 25px;
-            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid var(--text-main);
         }
         h1 {
-            font-size: 2.5rem;
-            margin: 0 0 10px 0;
-            font-weight: 600;
+            font-size: 2.75rem;
+            margin: 0 0 15px 0;
+            font-weight: 700;
             letter-spacing: -0.5px;
+            color: #000;
         }
         .contact-links {
-            font-size: 0.95rem;
+            font-family: var(--mono-font);
+            font-size: 0.85rem;
             color: var(--text-muted);
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 20px;
         }
         .contact-links a {
             color: var(--link-color);
             text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
         }
         .contact-links a:hover {
+            color: var(--link-hover);
             text-decoration: underline;
         }
         
         /* Section Titles */
         h2 {
-            font-size: 1.5rem;
-            margin-top: 40px;
-            margin-bottom: 25px;
-            font-weight: 600;
-            color: #111;
+            font-size: 1.4rem;
+            margin-top: 50px;
+            margin-bottom: 30px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-main);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
         }
         
         /* About Text */
@@ -67,39 +83,45 @@
             font-size: 1.05rem;
             margin-bottom: 20px;
             color: var(--text-main);
+            text-align: justify;
         }
         .resume-btn {
-            display: inline-block;
-            margin-top: 5px;
-            padding: 6px 14px;
-            background-color: #fafbfc;
-            border: 1px solid rgba(27,31,35,0.15);
-            border-radius: 6px;
-            color: #24292e;
+            display: inline-flex;
+            align-items: center;
+            margin-top: 10px;
+            padding: 8px 18px;
+            background-color: var(--text-main);
+            color: #ffffff;
+            font-family: var(--mono-font);
+            font-size: 0.85rem;
+            font-weight: 600;
             text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: background-color 0.2s;
+            border-radius: 2px;
+            transition: background-color 0.2s, transform 0.1s;
         }
         .resume-btn:hover {
-            background-color: #f3f4f6;
-            text-decoration: none;
+            background-color: #000000;
+            transform: translateY(-1px);
         }
 
         /* Flex Layout for Education & Experience */
         .list-item {
             display: flex;
-            margin-bottom: 35px;
+            margin-bottom: 40px;
             align-items: flex-start;
         }
         .item-logo {
             flex-shrink: 0;
-            width: 55px;
-            height: 55px;
+            width: 60px;
+            height: 60px;
             margin-right: 25px;
             display: flex;
             align-items: center;
             justify-content: center;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 5px;
         }
         .item-logo img {
             max-width: 100%;
@@ -113,68 +135,96 @@
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 2px;
+            margin-bottom: 4px;
         }
         .item-title {
-            font-weight: 600;
+            font-weight: 700;
             font-size: 1.1rem;
             margin: 0;
-            color: #222;
+            color: var(--text-main);
         }
         .item-date {
-            font-size: 0.9rem;
+            font-family: var(--mono-font);
+            font-size: 0.85rem;
             color: var(--text-muted);
             white-space: nowrap;
             margin-left: 15px;
         }
         .item-subtitle {
-            font-style: italic;
-            color: var(--text-muted);
-            margin: 0 0 8px 0;
+            font-weight: 500;
+            color: var(--link-color);
+            margin: 0 0 10px 0;
             font-size: 0.95rem;
         }
         ul {
             margin: 0;
-            padding-left: 20px;
+            padding-left: 18px;
             color: var(--text-muted);
             font-size: 0.95rem;
         }
         li {
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
 
         /* Projects Layout */
         .projects-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        @media (max-width: 650px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
         }
         .project-card {
-            padding: 18px 20px;
+            background: var(--card-bg);
+            padding: 22px;
             border: 1px solid var(--border-color);
-            border-radius: 6px;
-            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            border-radius: 2px;
+            transition: all 0.2s ease;
+            display: flex;
+            flex-direction: column;
         }
         .project-card:hover {
-            border-color: #ccc;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            border-color: var(--text-main);
+            box-shadow: 4px 4px 0px rgba(17, 24, 39, 0.05);
+            transform: translateY(-2px);
         }
         .project-title {
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin: 0 0 6px 0;
+            font-family: var(--mono-font);
+            font-weight: 700;
+            font-size: 1rem;
+            margin: 0 0 10px 0;
         }
         .project-title a {
-            color: var(--link-color);
+            color: var(--text-main);
             text-decoration: none;
         }
         .project-title a:hover {
-            text-decoration: underline;
+            color: var(--link-color);
         }
         .project-desc {
-            margin: 0;
-            font-size: 0.95rem;
+            margin: 0 0 15px 0;
+            font-size: 0.9rem;
             color: var(--text-muted);
+            flex-grow: 1;
+        }
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .tag {
+            font-family: var(--mono-font);
+            font-size: 0.7rem;
+            background: #f3f4f6;
+            color: var(--text-muted);
+            padding: 3px 8px;
+            border-radius: 2px;
+            border: 1px solid #e5e7eb;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
     </style>
 </head>
@@ -185,24 +235,18 @@
     <header>
         <h1>Carl Monnaert</h1>
         <div class="contact-links">
-            <span><a href="mailto:monnaert.carl@gmail.com">monnaert.carl@gmail.com</a></span>
-            <span>+33 7 68 30 74 34</span>
-            <span><a href="https://www.linkedin.com/in/carl-monnaert-12118a31a" target="_blank">LinkedIn</a></span>
-            <span><a href="https://github.com/carlmonnaert/" target="_blank">GitHub</a></span>
+            <span>> <a href="mailto:monnaert.carl@gmail.com">monnaert.carl@gmail.com</a></span>
+            <span>> +33 7 68 30 74 34</span>
+            <span>> <a href="https://www.linkedin.com/in/carl-monnaert-12118a31a" target="_blank">LinkedIn</a></span>
+            <span>> <a href="https://github.com/carlmonnaert/" target="_blank">GitHub</a></span>
         </div>
     </header>
 
     <section>
         <p class="about-text">
-            Welcome to my website.
-        </p>
-        <p class="about-text">
             As an engineering student at Télécom Paris specializing in Applied Mathematics, my academic journey is focused on the intersection of Stochastic Modeling, Numerical Analysis, and Machine Learning. I am deeply driven by rigorous statistical inference and computationally efficient problem-solving. My ultimate ambition is to leverage these mathematical frameworks and my programming expertise to build robust algorithmic strategies as a <b>Quantitative Trader</b>.
         </p>
-        <p class="about-text">
-            Here you'll find an overview of my academic background, my work experiences, and my projects.
-        </p>
-        <a href="https://carlmonnaert.github.io/resume.pdf" target="_blank" class="resume-btn">View my Resume (PDF)</a>
+        <a href="https://carlmonnaert.github.io/Profile.pdf" target="_blank" class="resume-btn">cat resume.pdf</a>
     </section>
 
     <section>
@@ -215,7 +259,7 @@
             <div class="item-content">
                 <div class="item-header">
                     <h3 class="item-title">Télécom Paris</h3>
-                    <span class="item-date">August 2024 - June 2027</span>
+                    <span class="item-date">Aug 2024 - Jun 2027</span>
                 </div>
                 <p class="item-subtitle">Engineer's degree, Applied mathematics</p>
             </div>
@@ -228,9 +272,9 @@
             <div class="item-content">
                 <div class="item-header">
                     <h3 class="item-title">Lycée Franklin Roosevelt</h3>
-                    <span class="item-date">September 2022 - July 2024</span>
+                    <span class="item-date">Sep 2022 - Jul 2024</span>
                 </div>
-                <p class="item-subtitle">Classes préparatoires aux grandes écoles (CPGE) MPI, Mathematics, Physics, Computer Science</p>
+                <p class="item-subtitle">CPGE MPI: Mathematics, Physics, Computer Science</p>
             </div>
         </div>
     </section>
@@ -245,7 +289,7 @@
             <div class="item-content">
                 <div class="item-header">
                     <h3 class="item-title">Computer Science Tutor | Chôten Academie</h3>
-                    <span class="item-date">March 2026 - Present</span>
+                    <span class="item-date">Mar 2026 - Present</span>
                 </div>
                 <ul>
                     <li>Instructed students in complex theoretical concepts, including algorithmic design, data structures, computational complexity, and programming (C, OCaml).</li>
@@ -260,7 +304,7 @@
             <div class="item-content">
                 <div class="item-header">
                     <h3 class="item-title">Mathematics Tutor | Masteur</h3>
-                    <span class="item-date">December 2024 - Present</span>
+                    <span class="item-date">Dec 2024 - Present</span>
                 </div>
                 <ul>
                     <li>Designed exercises and lectures to reinforce key concepts in mathematics.</li>
@@ -275,47 +319,76 @@
             <div class="item-content">
                 <div class="item-header">
                     <h3 class="item-title">Production Line Intern | GMJ Phoenix</h3>
-                    <span class="item-date">June 2025 - June 2025</span>
+                    <span class="item-date">Jun 2025 - Jun 2025</span>
                 </div>
                 <ul>
-                    <li>Ran a printing machine and helped maintaining it.</li>
+                    <li>Ran a printing machine and helped maintain it.</li>
                 </ul>
             </div>
         </div>
     </section>
 
     <section>
-        <h2>Public Projects</h2>
+        <h2>Quantitative & Technical Projects</h2>
         <div class="projects-grid">
             
             <div class="project-card">
                 <h3 class="project-title"><a href="https://github.com/carlmonnaert/QRT-Challenge-Data-2025" target="_blank">QRT-Challenge-Data-2025</a></h3>
-                <p class="project-desc">A data science project focused on survival analysis for leukemia patients, developed as part of the QRT Data Challenge 2025.</p>
+                <p class="project-desc">Survival analysis and overall survival prediction for patients diagnosed with Myeloid Leukemia.</p>
+                <div class="project-tags">
+                    <span class="tag">Jupyter</span>
+                    <span class="tag">Machine Learning</span>
+                    <span class="tag">Forecasting</span>
+                </div>
             </div>
 
             <div class="project-card">
                 <h3 class="project-title"><a href="https://github.com/carlmonnaert/Carbon-Project" target="_blank">Carbon-Project</a></h3>
-                <p class="project-desc">Numerical simulation of the global carbon cycle using finite-difference ODE solvers.</p>
+                <p class="project-desc">Numerical simulation of the global carbon cycle solving ODEs using the finite-difference method.</p>
+                <div class="project-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Numerical Methods</span>
+                    <span class="tag">ODE</span>
+                </div>
             </div>
 
             <div class="project-card">
                 <h3 class="project-title"><a href="https://github.com/carlmonnaert/Compiler" target="_blank">Compiler</a></h3>
-                <p class="project-desc">A compiler and interpreter project targeting the RISC-V architecture, supporting simplified subsets of Python and C.</p>
-            </div>
-
-            <div class="project-card">
-                <h3 class="project-title"><a href="https://github.com/carlmonnaert/Typescript-Display" target="_blank">Typescript-Display</a></h3>
-                <p class="project-desc">A showcase of TypeScript and web development skills with live-data integrations.</p>
+                <p class="project-desc">Interpreting/Compiling in RISC-V tools for simplified programming languages like Python and C.</p>
+                <div class="project-tags">
+                    <span class="tag">OCaml</span>
+                    <span class="tag">C</span>
+                    <span class="tag">RISC-V</span>
+                </div>
             </div>
 
             <div class="project-card">
                 <h3 class="project-title"><a href="https://github.com/carlmonnaert/Heat-equation" target="_blank">Heat-equation</a></h3>
-                <p class="project-desc">Numerical solver for the heat equation across one, two, and three dimensions, including interactive visualizations.</p>
+                <p class="project-desc">Numerical solver for the heat equation across one, two, and three dimensions, including visualizations.</p>
+                <div class="project-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Optimization</span>
+                    <span class="tag">Simulation</span>
+                </div>
             </div>
 
             <div class="project-card">
                 <h3 class="project-title"><a href="https://github.com/carlmonnaert/Medical-AI" target="_blank">Medical-AI</a></h3>
-                <p class="project-desc">A full-stack simulation platform for hospital resource management, combining ML forecasting, real-time monitoring, and rich dashboards.</p>
+                <p class="project-desc">Hospital simulation system integrating real-time monitoring, machine learning predictions, and dashboards.</p>
+                <div class="project-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Forecasting</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3 class="project-title"><a href="https://github.com/carlmonnaert/Typescript-Display" target="_blank">Typescript-Display</a></h3>
+                <p class="project-desc">Live real-time data integration showcase featuring a web platform for tracking crypto-market data.</p>
+                <div class="project-tags">
+                    <span class="tag">Astro</span>
+                    <span class="tag">TypeScript</span>
+                    <span class="tag">Web</span>
+                </div>
             </div>
 
         </div>
