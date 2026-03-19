@@ -1,3 +1,8 @@
+<style>
+  .page-header {
+    text-align: center;
+  }
+</style>
 <div align="center">
 
 <h3>Welcome to my website.</h3>
