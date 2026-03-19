@@ -1,0 +1,48 @@
+---
+---
+@import "{{ site.theme }}";
+
+/* --- Custom CSS for Quant Portfolio --- */
+
+/* 1. Widen the main container slightly so your table fits nicely */
+.wrapper {
+  max-width: 900px;
+}
+
+/* 2. Professional link colors (Navy Blue) */
+a {
+  color: #004080;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  color: #00264d;
+}
+
+/* 3. Clean up the Projects Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+th, td {
+  padding: 12px;
+  border-bottom: 1px solid #eaeaea;
+  border-right: none;
+  border-left: none;
+}
+th {
+  background-color: #f8f9fa;
+  color: #333;
+}
+/* Subtle hover effect on table rows */
+tr:hover {
+  background-color: #f1f5f9;
+}
+
+/* 4. Ensure right-aligned school/company logos have proper spacing */
+img[align="right"] {
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
