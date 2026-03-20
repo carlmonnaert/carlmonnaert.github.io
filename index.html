@@ -3,20 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Carl Monnaert | Quantitative Trader">
+    <meta property="og:description" content="Applied Mathematics & Computer Science student at Télécom Paris, specializing in quantitative trading strategies.">
+    <meta property="og:type" content="website">
     <title>Carl Monnaert | Quantitative Trader</title>
+    
     <style>
-        /* Deep Quant Dark Theme Variables & Typography */
+        /* CSS Variables - Dark Theme (Default) */
         :root {
-            --text-main: #f8fafc; /* Crisp off-white for high readability */
-            --text-muted: #94a3b8; /* Soft blue-gray for secondary text */
-            --link-color: #38bdf8; /* Electric, terminal-like cyan */
-            --link-hover: #7dd3fc; /* Brighter cyan on hover */
-            --border-color: #1e293b; /* Deep slate borders */
-            --bg-color: #020617; /* Near-black midnight background */
-            --card-bg: #0f172a; /* Slightly lighter deep slate for cards */
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --link-color: #38bdf8;
+            --link-hover: #7dd3fc;
+            --border-color: #1e293b;
+            --bg-color: #020617;
+            --card-bg: #0f172a;
+            --terminal-bg: #000000;
             
             --mono-font: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
             --sans-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        /* CSS Variables - Light Theme */
+        body.light-theme {
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --link-color: #0284c7;
+            --link-hover: #0369a1;
+            --border-color: #cbd5e1;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --terminal-bg: #1e293b;
         }
         
         body {
@@ -27,241 +44,135 @@
             margin: 0;
             padding: 60px 20px;
             -webkit-font-smoothing: antialiased;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Fade-in Animation */
+        .fade-in {
+            animation: fadeIn 0.8s ease-in forwards;
+            opacity: 0;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* Generic Link Styling */
-        a {
-            color: var(--link-color);
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-        a:hover {
-            color: var(--link-hover);
-            text-decoration: underline;
-        }
+        a { color: var(--link-color); text-decoration: none; transition: color 0.2s ease; }
+        a:hover { color: var(--link-hover); text-decoration: underline; }
         
-        .container {
-            max-width: 1000px; /* Widened to give 3 columns room to breathe */
-            margin: 0 auto;
-        }
+        .container { max-width: 1000px; margin: 0 auto; position: relative; }
         
+        /* Theme Toggle Button */
+        .theme-toggle {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: none;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: var(--mono-font);
+            font-size: 0.8rem;
+            transition: all 0.2s;
+        }
+        .theme-toggle:hover { border-color: var(--link-color); }
+
         /* Header Section */
         header {
             margin-bottom: 50px;
             padding-bottom: 30px;
             border-bottom: 2px solid var(--border-color);
-        }
-        h1 {
-            font-size: 2.75rem;
-            margin: 0 0 15px 0;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            color: var(--text-main);
-        }
-        .contact-links {
-            font-family: var(--mono-font);
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .contact-links a {
-            font-weight: 500;
-        }
-        
-        /* Section Titles */
-        h2 {
-            font-size: 1.4rem;
-            margin-top: 50px;
-            margin-bottom: 30px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-main);
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 8px;
-        }
-        
-        /* About Text */
-        .about-text {
-            font-size: 1.05rem;
-            margin-bottom: 20px;
-            color: var(--text-main);
-            text-align: justify;
-        }
-        .resume-btn {
-            display: inline-flex;
-            align-items: center;
-            margin-top: 10px;
-            padding: 8px 18px;
-            background-color: var(--link-color); /* Electric blue button */
-            color: #020617; /* Dark text for contrast */
-            font-family: var(--mono-font);
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-decoration: none;
-            border-radius: 2px;
-            transition: background-color 0.2s, transform 0.1s;
-        }
-        .resume-btn:hover {
-            background-color: var(--link-hover);
-            text-decoration: none;
-            color: #020617;
-            transform: translateY(-1px);
-        }
-
-        /* Flex Layout for Education & Experience */
-        .list-item {
-            display: flex;
-            margin-bottom: 40px;
-            align-items: flex-start;
-        }
-        .item-logo {
-            flex-shrink: 0;
-            width: 60px;
-            height: 60px;
-            margin-right: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #ffffff; /* Keep white so logos don't disappear */
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            padding: 5px;
-        }
-        .item-logo img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-        .item-content {
-            flex-grow: 1;
-        }
-        .item-header {
             display: flex;
             justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 4px;
-        }
-        .item-title {
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin: 0;
-            color: var(--text-main);
-        }
-        .item-date {
-            font-family: var(--mono-font);
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            white-space: nowrap;
-            margin-left: 15px;
-        }
-        .item-subtitle {
-            font-weight: 500;
-            color: var(--link-color);
-            margin: 0 0 10px 0;
-            font-size: 0.95rem;
-        }
-        ul {
-            margin: 0;
-            padding-left: 18px;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-        li {
-            margin-bottom: 8px;
-        }
-
-        /* Projects Layout */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3 columns grid */
+            align-items: center;
+            flex-wrap: wrap;
             gap: 20px;
         }
-        @media (max-width: 900px) {
-            .projects-grid {
-                grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
-            }
+        .header-text { flex-grow: 1; }
+        h1 { font-size: 2.75rem; margin: 0 0 15px 0; font-weight: 700; letter-spacing: -0.5px; }
+        .contact-links { font-family: var(--mono-font); font-size: 0.85rem; color: var(--text-muted); display: flex; flex-wrap: wrap; gap: 20px; }
+        .contact-links a { font-weight: 500; }
+        
+        /* Section Titles */
+        h2 { font-size: 1.4rem; margin-top: 50px; margin-bottom: 30px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-main); border-bottom: 1px solid var(--border-color); padding-bottom: 8px; }
+        
+        /* About Text */
+        .about-text { font-size: 1.05rem; margin-bottom: 20px; text-align: justify; }
+        .resume-btn {
+            display: inline-flex; align-items: center; margin-top: 10px; padding: 8px 18px;
+            background-color: var(--link-color); color: #020617; font-family: var(--mono-font);
+            font-size: 0.85rem; font-weight: 700; text-decoration: none; border-radius: 2px;
+            transition: background-color 0.2s, transform 0.1s;
         }
-        @media (max-width: 650px) {
-            .projects-grid {
-                grid-template-columns: 1fr; /* 1 column on small screens */
-            }
+        .resume-btn:hover { background-color: var(--link-hover); text-decoration: none; transform: translateY(-1px); }
+
+        /* Lists & Grids */
+        .list-item { display: flex; margin-bottom: 40px; align-items: flex-start; }
+        .item-logo { flex-shrink: 0; width: 60px; height: 60px; margin-right: 25px; display: flex; align-items: center; justify-content: center; background: #ffffff; border: 1px solid var(--border-color); border-radius: 4px; padding: 5px; }
+        .item-logo img { max-width: 100%; max-height: 100%; object-fit: contain; }
+        .item-content { flex-grow: 1; }
+        .item-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; }
+        .item-title { font-weight: 700; font-size: 1.1rem; margin: 0; }
+        .item-date { font-family: var(--mono-font); font-size: 0.85rem; color: var(--text-muted); white-space: nowrap; margin-left: 15px; }
+        .item-subtitle { font-weight: 500; color: var(--link-color); margin: 0 0 10px 0; font-size: 0.95rem; }
+        ul { margin: 0; padding-left: 18px; color: var(--text-muted); font-size: 0.95rem; }
+        li { margin-bottom: 8px; }
+
+        .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        @media (max-width: 900px) { .projects-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 650px) { .projects-grid { grid-template-columns: 1fr; } }
+        
+        .project-card { background: var(--card-bg); padding: 22px; border: 1px solid var(--border-color); border-radius: 4px; transition: all 0.2s ease; display: flex; flex-direction: column; }
+        .project-card:hover { border-color: var(--link-color); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); transform: translateY(-2px); }
+        .project-title { font-family: var(--mono-font); font-weight: 700; font-size: 1rem; margin: 0 0 10px 0; }
+        .project-title a { color: var(--text-main); }
+        .project-desc { margin: 0 0 15px 0; font-size: 0.9rem; color: var(--text-muted); flex-grow: 1; }
+        .project-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+        .tag { font-family: var(--mono-font); font-size: 0.7rem; background: rgba(148, 163, 184, 0.1); color: var(--text-main); padding: 3px 8px; border-radius: 2px; border: 1px solid var(--border-color); text-transform: uppercase; letter-spacing: 0.5px; }
+
+        /* Interactive Terminal Styling */
+        .terminal-container {
+            margin-top: 60px; background: var(--terminal-bg); border-radius: 6px; border: 1px solid var(--border-color); overflow: hidden; font-family: var(--mono-font); box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
-        .project-card {
-            background: var(--card-bg);
-            padding: 22px;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            transition: all 0.2s ease;
-            display: flex;
-            flex-direction: column;
-        }
-        .project-card:hover {
-            border-color: var(--link-color);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-            transform: translateY(-2px);
-        }
-        .project-title {
-            font-family: var(--mono-font);
-            font-weight: 700;
-            font-size: 1rem;
-            margin: 0 0 10px 0;
-        }
-        .project-title a {
-            color: var(--text-main);
-            text-decoration: none;
-        }
-        .project-title a:hover {
-            color: var(--link-color);
-        }
-        .project-desc {
-            margin: 0 0 15px 0;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            flex-grow: 1;
-        }
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        .tag {
-            font-family: var(--mono-font);
-            font-size: 0.7rem;
-            background: #1e293b;
-            color: #e2e8f0;
-            padding: 3px 8px;
-            border-radius: 2px;
-            border: 1px solid #334155;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
+        .terminal-header { background: #1a1a1a; padding: 8px 12px; color: #888; font-size: 0.8rem; display: flex; align-items: center; gap: 6px; border-bottom: 1px solid #333;}
+        .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+        .dot.red { background: #ff5f56; } .dot.yellow { background: #ffbd2e; } .dot.green { background: #27c93f; }
+        .terminal-body { padding: 15px; color: #10b981; font-size: 0.85rem; min-height: 150px; max-height: 250px; overflow-y: auto; display: flex; flex-direction: column; }
+        .terminal-line { margin-bottom: 6px; line-height: 1.4; display: flex; }
+        .prompt { color: var(--link-color); margin-right: 10px; white-space: nowrap;}
+        .terminal-input-wrap { display: flex; align-items: center; margin-top: auto; }
+        #terminal-input { background: transparent; border: none; color: #f8fafc; font-family: inherit; font-size: inherit; flex-grow: 1; outline: none; }
+        .cmd-output { color: #cbd5e1; margin-bottom: 10px; padding-left: 10px; border-left: 2px solid #333; }
     </style>
 </head>
 <body>
 
-<div class="container">
+<div class="container fade-in">
+    <button class="theme-toggle" id="theme-toggle">Light Mode</button>
 
     <header>
-        <h1>Carl Monnaert</h1>
-        <div class="contact-links">
-            <span>> <a href="mailto:monnaert.carl@gmail.com">monnaert.carl@gmail.com</a></span>
-            <span>> +33 7 68 30 74 34</span>
-            <span>> <a href="https://www.linkedin.com/in/carl-monnaert-12118a31a" target="_blank">LinkedIn</a></span>
-            <span>> <a href="https://github.com/carlmonnaert/" target="_blank">GitHub</a></span>
+        <div class="header-text">
+            <h1>Carl Monnaert</h1>
+            <div class="contact-links">
+                <span>> <a href="mailto:monnaert.carl@gmail.com">monnaert.carl@gmail.com</a></span>
+                <span>> +33 7 68 30 74 34</span>
+                <span>> <a href="https://www.linkedin.com/in/carl-monnaert-12118a31a" target="_blank">LinkedIn</a></span>
+                <span>> <a href="https://github.com/carlmonnaert/" target="_blank">GitHub</a></span>
+            </div>
         </div>
     </header>
 
-    <section>
+    <section class="fade-in" style="animation-delay: 0.1s;">
         <p class="about-text">
             As an engineering student at Télécom Paris specializing in Applied Mathematics, my academic journey is focused on the intersection of Stochastic Modeling, Numerical Analysis, and Machine Learning. I am deeply driven by rigorous statistical inference and computationally efficient problem-solving. My ultimate ambition is to leverage these mathematical frameworks and my programming expertise to build robust algorithmic strategies as a <b>Quantitative Trader</b>.
         </p>
         <a href="https://carlmonnaert.github.io/resume.pdf" target="_blank" class="resume-btn">cat resume.pdf</a>
     </section>
 
-    <section>
+    <section class="fade-in" style="animation-delay: 0.2s;">
         <h2>Education</h2>
         
         <div class="list-item">
@@ -273,7 +184,10 @@
                     <h3 class="item-title">Télécom Paris</h3>
                     <span class="item-date">Aug 2024 - Jun 2027</span>
                 </div>
-                <p class="item-subtitle">Engineer's degree, Applied mathematics</p>
+                <p class="item-subtitle">Master of Science in Applied Mathematics & Computer Science (GPA: 3.86/4.0)</p>
+                <ul>
+                    <li>Relevant Coursework: Stochastic Calculus, Time Series, Continuous Optimization, Databases.</li>
+                </ul>
             </div>
         </div>
 
@@ -286,12 +200,15 @@
                     <h3 class="item-title">Lycée Franklin Roosevelt</h3>
                     <span class="item-date">Sep 2022 - Jul 2024</span>
                 </div>
-                <p class="item-subtitle">CPGE MPI: Mathematics, Physics, Computer Science</p>
+                <p class="item-subtitle">CPGE MPI: Mathematics, Physics, Computer Science (GPA: 4.0/4.0)</p>
+                <ul>
+                    <li>Relevant Coursework: Probabilities, Linear Algebra, Topology, NP-completeness.</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <section>
+    <section class="fade-in" style="animation-delay: 0.3s;">
         <h2>Work Experience</h2>
 
         <div class="list-item">
@@ -301,10 +218,10 @@
             <div class="item-content">
                 <div class="item-header">
                     <h3 class="item-title">Computer Science Tutor | Chôten Academie</h3>
-                    <span class="item-date">Mar 2026 - Present</span>
+                    <span class="item-date">Feb 2026 - Present</span>
                 </div>
                 <ul>
-                    <li>Instructed students in complex theoretical concepts, including algorithmic design, data structures, computational complexity, and programming (C, OCaml).</li>
+                    <li>Instructed CPGE students in complex theoretical concepts, including algorithmic design, data structures, computational complexity, and programming (C, OCaml).</li>
                 </ul>
             </div>
         </div>
@@ -319,34 +236,19 @@
                     <span class="item-date">Dec 2024 - Present</span>
                 </div>
                 <ul>
-                    <li>Designed exercises and lectures to reinforce key concepts in mathematics.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="list-item">
-            <div class="item-logo">
-                <img src="https://gmjphoenix.com/wp-content/uploads/2023/11/LOGO-GMJ-CARRE-4.png" alt="GMJ Phoenix">
-            </div>
-            <div class="item-content">
-                <div class="item-header">
-                    <h3 class="item-title">Production Line Intern | GMJ Phoenix</h3>
-                    <span class="item-date">Jun 2025 - Jun 2025</span>
-                </div>
-                <ul>
-                    <li>Ran a printing machine and helped maintain it.</li>
+                    <li>Designed exercises and lectures to reinforce key concepts in mathematics for bachelor-level students.</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <section>
+    <section class="fade-in" style="animation-delay: 0.4s;">
         <h2>Quantitative & Technical Projects</h2>
         <div class="projects-grid">
             
             <div class="project-card">
-                <h3 class="project-title"><a href="https://github.com/carlmonnaert/QRT-Challenge-Data-2025" target="_blank">QRT-Challenge-Data-2025</a></h3>
-                <p class="project-desc">Survival analysis and overall survival prediction for patients diagnosed with Myeloid Leukemia.</p>
+                <h3 class="project-title"><a href="https://github.com/carlmonnaert/QRT-Challenge-Data-2025" target="_blank">Qube Research Tech Challenge</a></h3>
+                <p class="project-desc">Asset Allocation Performance forecasting and Survival Prediction for patients. Ranked 123/692.</p>
                 <div class="project-tags">
                     <span class="tag">Jupyter</span>
                     <span class="tag">Machine Learning</span>
@@ -394,7 +296,7 @@
             </div>
 
             <div class="project-card">
-                <h3 class="project-title"><a href="https://github.com/carlmonnaert/Typescript-Display" target="_blank">Typescript-Display</a></h3>
+                <h3 class="project-title"><a href="https://github.com/carlmonnaert/Typescript-Display" target="_blank">Crypto Live Tracker</a></h3>
                 <p class="project-desc">Live real-time data integration showcase featuring a web platform for tracking crypto-market data.</p>
                 <div class="project-tags">
                     <span class="tag">Astro</span>
@@ -406,23 +308,115 @@
         </div>
     </section>
 
-    <section>
+    <section class="fade-in" style="animation-delay: 0.5s;">
         <h2>Other Interests</h2>
         <div class="item-content" style="margin-bottom: 25px;">
-            <h3 class="item-title">Chess</h3>
+            <h3 class="item-title">Chess (1450+ Elo)</h3>
             <p class="project-desc" style="margin-top: 8px;">
-                Competitive player focused on <b>Rapid mode</b>. You can view my current rating and match history on <a href="https://www.chess.com/member/carlmnr" target="_blank">Chess.com (Carlmnr)</a>.
+                Competitive player focused on <b>Rapid mode</b>. Analyzing deep tactical lines informs my approach to algorithmic logic. View my match history on <a href="https://www.chess.com/member/carlmnr" target="_blank">Chess.com (Carlmnr)</a>.
+            </p>
+        </div>
+        <div class="item-content" style="margin-bottom: 25px;">
+            <h3 class="item-title">Quantitative Literature</h3>
+            <p class="project-desc" style="margin-top: 8px;">
+                Currently studying <i>A Practical Guide to Quantitative Finance Interviews</i> (the "green book") by Xinfeng Zhou.
             </p>
         </div>
         <div class="item-content">
-            <h3 class="item-title">Quantitative Literature</h3>
+            <h3 class="item-title">Muay Thaï</h3>
             <p class="project-desc" style="margin-top: 8px;">
-                Currently studying <i>A Practical Guide to Quantitative Finance Interviews</i> (often referred to as "the green book") by Xinfeng Zhou.
+                Discipline, endurance, and strategy off the keyboard.
             </p>
         </div>
     </section>
 
+    <section class="terminal-container fade-in" style="animation-delay: 0.6s;">
+        <div class="terminal-header">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span> bash - carl@quant-server
+        </div>
+        <div class="terminal-body" id="terminal-body">
+            <div class="terminal-line">Welcome to CarlOS v1.0.0. Type 'help' to see available commands.</div>
+            
+            <div class="terminal-input-wrap">
+                <span class="prompt">carl@quant:~$</span> 
+                <input type="text" id="terminal-input" autocomplete="off" autofocus spellcheck="false">
+            </div>
+        </div>
+    </section>
+
 </div>
+
+<script>
+    // Theme Toggle Logic
+    const themeBtn = document.getElementById('theme-toggle');
+    themeBtn.addEventListener('click', () => {
+        document.body.classList.toggle('light-theme');
+        if (document.body.classList.contains('light-theme')) {
+            themeBtn.innerText = 'Dark Mode';
+        } else {
+            themeBtn.innerText = 'Light Mode';
+        }
+    });
+
+    // Terminal Logic
+    const termInput = document.getElementById('terminal-input');
+    const termBody = document.getElementById('terminal-body');
+
+    termInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            const command = termInput.value.trim().toLowerCase();
+            
+            // Echo command
+            const cmdEcho = document.createElement('div');
+            cmdEcho.className = 'terminal-line';
+            cmdEcho.innerHTML = `<span class="prompt">carl@quant:~$</span> <span style="color:#f8fafc">${termInput.value}</span>`;
+            termBody.insertBefore(cmdEcho, termInput.parentElement);
+
+            // Process command
+            const output = document.createElement('div');
+            output.className = 'cmd-output';
+            
+            switch(command) {
+                case 'help':
+                    output.innerHTML = 'Available commands:<br>  <b>skills</b>  - List technical stack<br>  <b>about</b>   - Quick bio<br>  <b>contact</b> - Get my email<br>  <b>clear</b>   - Clear terminal';
+                    break;
+                case 'skills':
+                    output.innerHTML = '-> Python (Pandas/Scikit/PyTorch)<br>-> C, OCaml, SQL<br>-> Web (HTML/CSS/Astro/TypeScript)<br>-> Tools (Git, LaTeX)';
+                    break;
+                case 'about':
+                    output.innerHTML = 'I am an Applied Math & CS student at Télécom Paris, looking to build robust algorithmic strategies.';
+                    break;
+                case 'contact':
+                    output.innerHTML = 'Shoot me an email: <a href="mailto:monnaert.carl@gmail.com" style="color:var(--link-color)">monnaert.carl@gmail.com</a>';
+                    break;
+                case 'clear':
+                    document.querySelectorAll('.terminal-line').forEach(el => {
+                        if (el !== termInput.parentElement) el.remove();
+                    });
+                    document.querySelectorAll('.cmd-output').forEach(el => el.remove());
+                    output.innerHTML = ''; // Don't print anything
+                    break;
+                case '':
+                    output.innerHTML = '';
+                    break;
+                default:
+                    output.innerHTML = `bash: ${command}: command not found`;
+            }
+
+            if (output.innerHTML !== '') {
+                termBody.insertBefore(output, termInput.parentElement);
+            }
+            
+            termInput.value = '';
+            termBody.scrollTop = termBody.scrollHeight;
+        }
+    });
+    
+    // Auto-focus terminal when clicked anywhere in the container
+    document.querySelector('.terminal-container').addEventListener('click', () => {
+        termInput.focus();
+    });
+</script>
 
 </body>
 </html>
