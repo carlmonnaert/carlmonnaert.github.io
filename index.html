@@ -28,6 +28,17 @@
             padding: 60px 20px;
             -webkit-font-smoothing: antialiased;
         }
+
+        /* Generic Link Styling */
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        a:hover {
+            color: var(--link-hover);
+            text-decoration: underline;
+        }
         
         .container {
             max-width: 1000px; /* Widened to give 3 columns room to breathe */
@@ -56,14 +67,7 @@
             gap: 20px;
         }
         .contact-links a {
-            color: var(--link-color);
-            text-decoration: none;
             font-weight: 500;
-            transition: color 0.2s ease;
-        }
-        .contact-links a:hover {
-            color: var(--link-hover);
-            text-decoration: underline;
         }
         
         /* Section Titles */
@@ -102,6 +106,8 @@
         }
         .resume-btn:hover {
             background-color: var(--link-hover);
+            text-decoration: none;
+            color: #020617;
             transform: translateY(-1px);
         }
 
@@ -397,6 +403,16 @@
                 </div>
             </div>
 
+        </div>
+    </section>
+
+    <section>
+        <h2>Other Interests</h2>
+        <div class="item-content">
+            <h3 class="item-title">Chess</h3>
+            <p class="project-desc" style="margin-top: 8px;">
+                Competitive player focused on <b>Rapid mode</b>. You can view my current rating and match history on <a href="https://www.chess.com/member/carlmnr" target="_blank">Chess.com (carlmnr)</a>.
+            </p>
         </div>
     </section>
 
