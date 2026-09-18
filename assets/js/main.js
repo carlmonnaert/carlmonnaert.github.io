@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`);
         
         if (!response.ok) {
+            if (response.status === 403) {
+                throw new Error("GitHub API rate limit exceeded. Please wait an hour and refresh.");
+            }
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         
@@ -18,16 +21,22 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         const filteredRepos = repos.filter(repo => !repo.fork && repo.name !== `${username}.github.io`);
 
+        if (filteredRepos.length === 0) {
+            projectList.innerHTML = '<p>No public projects found.</p>';
+            return;
+        }
+
         filteredRepos.forEach(repo => {
             const article = document.createElement('article');
             article.className = 'project';
 
             const date = new Date(repo.created_at).getFullYear();
-            const title = repo.name.replace(/-/g, ' ').replace(/(^\w|\s\w)/g, m => m.toUpperCase());
+            const titleName = repo.name || 'Untitled';
+            const title = titleName.replace(/-/g, ' ').replace(/(^\w|\s\w)/g, m => m.toUpperCase());
 
             const techStack = [];
             if (repo.language) techStack.push(repo.language);
-            if (repo.topics && repo.topics.length > 0) {
+            if (repo.topics && Array.isArray(repo.topics)) {
                 techStack.push(...repo.topics);
             }
 
@@ -35,7 +44,6 @@ document.addEventListener('DOMContentLoaded', async () => {
                 ? `<ul class="tech-stack">${techStack.map(tech => `<li>${tech}</li>`).join('')}</ul>`
                 : '';
 
-            // Generate GitHub and GitHub Pages links
             let linksHTML = `<a href="${repo.html_url}" target="_blank">Repository</a>`;
             if (repo.has_pages) {
                 linksHTML += ` <span class="separator">/</span> <a href="https://${username}.github.io/${repo.name}/" target="_blank">Live Demo</a>`;
@@ -53,7 +61,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
 
     } catch (error) {
-        console.error("Failed to fetch GitHub projects:", error);
-        projectList.innerHTML = '<p>Unable to load projects at this time. Please visit my <a href="https://github.com/carlmonnaert">GitHub profile</a> directly.</p>';
+        console.error("Fetch error details:", error);
+        if (projectList) {
+            // Replaces the "Fetching..." text with the actual error so you aren't left guessing
+            projectList.innerHTML = `<p style="color: #d9534f;"><b>System Error:</b> ${error.message} <br><br> Please visit my <a href="https://github.com/carlmonnaert">GitHub profile</a> directly.</p>`;
+        }
     }
 });
