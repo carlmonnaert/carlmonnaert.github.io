@@ -61,7 +61,6 @@ header p {
 /* Project Layout (CSS Grid) */
 .project-list {
     display: grid;
-    /* This automatically creates 1, 2, or 3 columns based on the screen width */
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;
 }
@@ -84,7 +83,7 @@ header p {
 .project p {
     color: #444;
     margin-bottom: 1.5rem;
-    flex-grow: 1; /* Pushes the links and tags to the bottom of the card */
+    flex-grow: 1; 
 }
 
 /* Project Links */
