@@ -3,189 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carl Monnaert | Projects</title>
-    <style>
-        :root {
-            --bg-color: #ffffff;
-            --text-main: #1a1a1a;
-            --text-secondary: #666666;
-            --border-color: #eaeaea;
-            --tag-bg: #f4f4f5;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-            margin: 0;
-            padding: 60px 20px;
-            max-width: 760px;
-            margin-left: auto;
-            margin-right: auto;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        header {
-            margin-bottom: 50px;
-        }
-
-        h1 {
-            font-size: 2.2rem;
-            font-weight: 600;
-            margin: 0 0 8px 0;
-            letter-spacing: -0.02em;
-        }
-
-        .subtitle {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin: 0;
-        }
-
-        .project-list {
-            display: flex;
-            flex-direction: column;
-            gap: 48px;
-            margin-top: 40px;
-        }
-
-        .project {
-            border-top: 1px solid var(--border-color);
-            padding-top: 24px;
-        }
-
-        .project-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 12px;
-        }
-
-        .project-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin: 0;
-        }
-
-        .project-date {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            font-variant-numeric: tabular-nums;
-        }
-
-        .project-desc {
-            margin: 0 0 16px 0;
-            font-size: 1rem;
-            color: #333333;
-        }
-
-        .tech-stack {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        .tech-tag {
-            font-size: 0.8rem;
-            background-color: var(--tag-bg);
-            color: var(--text-secondary);
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-        }
-
-        @media (max-width: 600px) {
-            .project-header {
-                flex-direction: column;
-                gap: 4px;
-            }
-        }
-    </style>
+    <title>Carl Monnaert - Projects</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <header>
         <h1>Carl Monnaert</h1>
-        <p class="subtitle">Software Engineering & Quantitative Modeling Projects</p>
+        <p>A repertoire of selected projects in quantitative modeling, machine learning, and software engineering.</p>
+        <div class="links">
+            <a href="https://github.com/carlmonnaert">GitHub</a>
+        </div>
     </header>
 
-    <main class="project-list">
-        
-        <article class="project">
-            <div class="project-header">
-                <h2 class="project-title">Jane Street Planetary Parade Solver</h2>
-                <span class="project-date">March 2026</span>
-            </div>
-            <p class="project-desc">
-                Derived exact analytical and numerical solutions for the Jane Street March 2026 mathematical puzzle, requiring advanced probability and geometric calculations.
-            </p>
-            <div class="tech-stack">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">Probability</span>
-                <span class="tech-tag">LaTeX</span>
-            </div>
-        </article>
-
-        <article class="project">
-            <div class="project-header">
-                <h2 class="project-title">QRT Data Challenge: Asset Allocation</h2>
-                <span class="project-date">Jan 2026 – Present</span>
-            </div>
-            <p class="project-desc">
-                Developed predictive strategies and quantitative models for forecasting asset allocation performance in the Qube Research & Technologies competition.
-            </p>
-            <div class="tech-stack">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">Machine Learning</span>
-                <span class="tech-tag">Time Series Analysis</span>
-            </div>
-        </article>
-
-        <article class="project">
-            <div class="project-header">
-                <h2 class="project-title">QRT Data Challenge: Survival Prediction</h2>
-                <span class="project-date">Oct 2025 – Jan 2026</span>
-            </div>
-            <p class="project-desc">
-                Implemented a Random Survival Forest model to predict overall survival metrics for a data challenge hosted by Qube Research & Technologies.
-            </p>
-            <div class="tech-stack">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">Random Survival Forests</span>
-                <span class="tech-tag">Data Modeling</span>
-            </div>
-        </article>
-
-        <article class="project">
-            <div class="project-header">
-                <h2 class="project-title">Hospital Flow Rate Forecasting App</h2>
-                <span class="project-date">Jan 2025 – Jun 2025</span>
-            </div>
-            <p class="project-desc">
-                Built a data visualization and risk management application utilizing Gradient Boosting models and seasonal Poisson processes to monitor and forecast patient flow rates.
-            </p>
-            <div class="tech-stack">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">Gradient Boosting</span>
-                <span class="tech-tag">Stochastic Modeling</span>
-            </div>
-        </article>
-
-        <article class="project">
-            <div class="project-header">
-                <h2 class="project-title">Custom Interpreter & Compiler</h2>
-                <span class="project-date">Sep 2024 – Dec 2024</span>
-            </div>
-            <p class="project-desc">
-                Engineered a custom Python interpreter and a functional C dialect compiler from scratch. Handled all stages of the pipeline including tokenization, abstract syntax tree (AST) evaluation, and assembly generation.
-            </p>
-            <div class="tech-stack">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">C</span>
-                <span class="tech-tag">Compiler Design</span>
-            </div>
-        </article>
-
+    <main>
+        <!-- The JavaScript will inject your repositories here -->
+        <section id="project-list" class="project-list">
+            <p id="loading-message">Fetching projects from GitHub...</p>
+        </section>
     </main>
+
+    <footer>
+        <p>&copy; 2026 Carl Monnaert</p>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
